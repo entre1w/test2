@@ -1,0 +1,28 @@
+#include <stdio.h>
+#include <string.h>
+int main()
+{
+	printf("输入一段英文：\n");
+	
+	char str[1000];
+	int count = 0;
+	strlwr(gets(str));
+    printf("输入你想查找的单词或字母:\n");
+	char ch[100];
+	gets(ch);
+    for(int i = 0;str[i] != '\0';i++)
+	{
+		int j = 0,k = 0;
+		for(j=i;str[j] == ch[k]&&str[j] != '\0';k++,j++)
+			if(ch[k+1] == '\0')
+			{
+				count++;
+				break;
+			}
+		
+	}
+	printf("你想查找的单词或字母个数为：%d\n",count);
+
+
+	return 0;
+}
